@@ -7,22 +7,15 @@ import java.util.List;
 public class Main {
 
   public static void main(String[] args)  {
-    List<Wolf> wolves = new ArrayList<>();
-    wolves.add(new Wolf());
-    wolves.add(new Wolf());
-    wolves.add(new Wolf());
-    wolves.add(new Dog());
-    wolves.add(new Dog());
-    wolves.add(new Dog());
-    Collections.shuffle(wolves);
-    for (Wolf w: wolves) {
-      System.out.println();
-      System.out.println(w.getClass().getName());
-      w.hunt();
-      w.vocalize();
-      if (w instanceof Dog) {
-        ((Dog) w).rollOver();
-      }
-    }
+    new Dog();
+    /*
+    0. Class initialization of Wolf superclass (Object) - not necessary, because Object is already loaded and initialized.
+    1. Class initialization of Wolf
+    2. Class initialization of Dog
+    (2a). Object's initialization of Dog instance.
+    3. Wolf's initialization of Dog instance
+    4. Dog's initialization of Dog instance
+
+     */
   }
 }
